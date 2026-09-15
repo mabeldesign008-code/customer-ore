@@ -1,1 +1,0 @@
-{"version":3,"file":"customer-loyalty.entity.d.ts","sourceRoot":"","sources":["../../../../../../../apps/ledger/src/entities/customer-loyalty.entity.ts"],"names":[],"mappings":"AAEA,0FAA0F;AAC1F,qBACa,eAAe;IAE1B,MAAM,EAAE,MAAM,CAAC;IAGf,MAAM,EAAE,MAAM,CAAC;IAGf,cAAc,EAAE,MAAM,CAAC;IAGvB,gBAAgB,EAAE,MAAM,CAAC;IAGzB,SAAS,EAAE,IAAI,CAAC;IAGhB,SAAS,EAAE,IAAI,CAAC;CACjB"}
