@@ -1,0 +1,74 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main",
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/nx.json"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "{projectRoot}/tsconfig*.json"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "cache": true
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^typecheck"
+      ],
+      "inputs": [
+        "default",
+        "{projectRoot}/tsconfig*.json"
+      ],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "default",
+        "^default"
+      ],
+      "cache": true
+    },
+    "analyze": {
+      "inputs": [
+        "default"
+      ],
+      "cache": true
+    },
+    "build-web": {
+      "inputs": [
+        "default"
+      ],
+      "outputs": [
+        "{projectRoot}/build/web"
+      ],
+      "cache": true
+    },
+    "build-apk": {
+      "inputs": [
+        "default"
+      ],
+      "outputs": [
+        "{projectRoot}/build/app/outputs/flutter-apk"
+      ],
+      "cache": true
+    }
+  },
+  "analytics": false
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Debug-only override of network security config. Android automatically uses
+  this when building the debug variant (src/debug/res wins over src/main/res).
+  Allows cleartext to 10.0.2.2 (emulator → host) and trusts user-installed
+  CAs so that Charles Proxy / mitmproxy works during QA.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="user"/>
+        </trust-anchors>
+    </base-config>
+</network-security-config>

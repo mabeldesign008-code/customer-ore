@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ore Android Network Security Configuration.
+
+  This file enforces TLS for *all* domains (no cleartext HTTP anywhere in
+  production). Certificate pinning is declared for our API gateway domains
+  using SHA-256 public-key pins per OWASP M3.
+
+  ── Pin rotation ──────────────────────────────────────────────────────
+  Always ship at least TWO pins:
+    pin[0]  = current leaf / intermediate
+    pin[1]  = backup pin (next cert's pubkey, OR the root CA pubkey)
+  Before rotating certs, ship an app update with the new pin added. If a pin
+  expires and no backup exists, the app will refuse to connect for *every*
+  user — cert pin outages are one of the worst production incidents possible.
+  The expiration date below must be renewed before certificate expiry.
+
+  ── Dev overrides ─────────────────────────────────────────────────────
+  In `android/app/build.gradle` we override this file for debug builds with
+  a permissive config (cleartext allowed for 10.0.2.2 emulator). Release
+  builds strictly enforce this file.
+-->
+<network-security-config>
+
+    <!-- Base config: NO cleartext anywhere, system-trusted CAs only. -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+            <!-- Do NOT trust user-installed CAs in release builds (Charles/mitmproxy
+                 added by a user on a rooted device would otherwise be able to MITM
+                 HTTPS traffic). -->
+        </trust-anchors>
+    </base-config>
+
+    <!-- Production API gateway(s). Replace pins with your real cert SPKIs
+         generated via:
+           openssl s_client -connect api.ore.delivery:443 -servername api.ore.delivery \
+             | openssl x509 -pubkey -noout | openssl pkey -pubin -outform der \
+             | openssl dgst -sha256 -binary | openssl enc -base64
+         The placeholders below are sample pins for documentation; replace
+         before shipping to production. -->
+    <domain-config>
+        <domain includeSubdomains="true">api.ore.delivery</domain>
+        <domain includeSubdomains="true">api-staging.ore.delivery</domain>
+        <pin-set expiration="2027-01-01">
+            <pin digest="SHA-256">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pin>
+            <pin digest="SHA-256">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=</pin>
+        </pin-set>
+        <!-- Enforce TLS 1.2+ (implicit but explicit for auditors) -->
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </domain-config>
+
+</network-security-config>

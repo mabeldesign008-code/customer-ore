@@ -1,0 +1,51 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "noEmit": false,
+    "sourceMap": true,
+    "declaration": false,
+    "baseUrl": "../../",
+    "paths": {
+      "@ore/contracts": [
+        "libs/contracts/src/index.ts"
+      ],
+      "@ore/config": [
+        "libs/config/src/index.ts"
+      ],
+      "@ore/db": [
+        "libs/db/src/index.ts"
+      ],
+      "@ore/geo": [
+        "libs/geo/src/index.ts"
+      ],
+      "@ore/paystack": [
+        "libs/paystack/src/index.ts"
+      ],
+      "@ore/bus": [
+        "libs/bus/src/index.ts"
+      ],
+      "@ore/jobs": [
+        "libs/jobs/src/index.ts"
+      ],
+      "@ore/maps": [
+        "libs/maps/src/index.ts"
+      ],
+      "@ore/notify": [
+        "libs/notify/src/index.ts"
+      ],
+      "@ore/core": [
+        "libs/core/src/index.ts"
+      ],
+      "@ore/seed": [
+        "libs/seed/src/index.ts"
+      ],
+      "@ore/storage": [
+        "libs/storage/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

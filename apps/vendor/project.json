@@ -1,0 +1,57 @@
+{
+  "name": "vendor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/vendor/lib",
+  "tags": ["scope:mobile", "type:app", "platform:flutter"],
+  "targets": {
+    "pub-get": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter pub get",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter analyze .",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/lib/**/*", "{projectRoot}/test/**/*"],
+      "outputs": ["{projectRoot}/coverage"],
+      "options": {
+        "command": "flutter test",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "build-web": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/lib/**/*", "{projectRoot}/web/**/*", "{projectRoot}/pubspec.yaml"],
+      "outputs": ["{projectRoot}/build/web"],
+      "options": {
+        "command": "flutter build web --release",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "build-apk": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/lib/**/*", "{projectRoot}/android/**/*", "{projectRoot}/pubspec.yaml"],
+      "outputs": ["{projectRoot}/build/app/outputs/flutter-apk"],
+      "options": {
+        "command": "flutter build apk --release",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter run -d web-server --web-port=4202 --web-hostname=0.0.0.0",
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

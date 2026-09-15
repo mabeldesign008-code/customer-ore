@@ -1,0 +1,31 @@
+name: ore_monorepo
+repository: https://github.com/amoahsoftware-a11y/ore-work
+
+packages:
+  - apps/customer
+  - apps/rider
+  - apps/vendor
+  - packages/ore_core
+
+scripts:
+  bootstrap:
+    exec: flutter pub get
+    description: "Install all Dart & Flutter dependencies across the monorepo"
+
+  analyze:
+    exec: flutter analyze .
+    description: "Run static analysis across all Dart and Flutter projects"
+
+  test:
+    exec: flutter test --no-pub
+    description: "Run Flutter unit and widget tests"
+
+  clean:
+    exec: flutter clean
+    description: "Clean build caches for all Flutter projects"
+
+  build:web:
+    exec: flutter build web --release
+    packageFilters:
+      dirExists: web
+    description: "Build web release bundles for apps supporting web"

@@ -1,0 +1,15 @@
+{
+  "name": "@ore/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.3",
+    "@ore/config": "workspace:*",
+    "pg": "^8.23.0",
+    "sqlite3": "^5.1.7",
+    "typeorm": "0.3.31"
+  }
+}

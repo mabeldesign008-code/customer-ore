@@ -1,0 +1,15 @@
+groups:
+  - name: ore-slos
+    rules:
+      - record: job:ore_order_success:ratio
+        expr: sum(rate(ore_http_requests_total{route="POST /cart/checkout",status="201"}[5m])) / sum(rate(ore_http_requests_total{route="POST /cart/checkout"}[5m]))
+      - alert: OreCheckoutSLIBurn
+        expr: job:ore_order_success:ratio < 0.999
+        for: 10m
+        labels: { severity: page }
+        annotations: { summary: "Checkout success SLO burn", description: "Order success ratio below 99.9% over the window." }
+      - alert: OreOutboxLag
+        expr: max(ore_outbox_pending) > 100
+        for: 5m
+        labels: { severity: warning }
+        annotations: { summary: "Outbox backlog growing", description: "Pending events in outbox tables exceed 100 — relay may be stuck." }

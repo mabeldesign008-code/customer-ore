@@ -1,0 +1,20 @@
+                        -H/Users/dhruvkathiriya/Documents/flutter/packages/flutter_tools/gradle/src/main/scripts
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=24
+-DANDROID_PLATFORM=android-24
+-DANDROID_ABI=arm64-v8a
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DANDROID_NDK=/Users/dhruvkathiriya/Library/Android/sdk/ndk/27.0.12077973
+-DCMAKE_ANDROID_NDK=/Users/dhruvkathiriya/Library/Android/sdk/ndk/27.0.12077973
+-DCMAKE_TOOLCHAIN_FILE=/Users/dhruvkathiriya/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/dhruvkathiriya/Library/Android/sdk/cmake/3.22.1/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/dhruvkathiriya/Documents/Dhruv/FlutterProject/Orange/android/app/build/intermediates/cxx/profile/4t6j63s3/obj/arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/dhruvkathiriya/Documents/Dhruv/FlutterProject/Orange/android/app/build/intermediates/cxx/profile/4t6j63s3/obj/arm64-v8a
+-B/Users/dhruvkathiriya/Documents/Dhruv/FlutterProject/Orange/android/app/.cxx/profile/4t6j63s3/arm64-v8a
+-GNinja
+-Wno-dev
+--no-warn-unused-cli
+-DCMAKE_BUILD_TYPE=profile
+                        Build command args: []
+                        Version: 2

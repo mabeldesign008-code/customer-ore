@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CADisableMinimumFrameDurationOnPhone</key>
+		<true/>
+		<key>CFBundleDevelopmentRegion</key>
+		<string>$(DEVELOPMENT_LANGUAGE)</string>
+		<key>CFBundleDisplayName</key>
+		<string>Ore</string>
+		<key>CFBundleExecutable</key>
+		<string>$(EXECUTABLE_NAME)</string>
+		<key>CFBundleIdentifier</key>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>CFBundleName</key>
+		<string>Ore</string>
+		<key>CFBundlePackageType</key>
+		<string>APPL</string>
+		<key>CFBundleShortVersionString</key>
+		<string>$(FLUTTER_BUILD_NAME)</string>
+		<key>CFBundleSignature</key>
+		<string>????</string>
+		<key>CFBundleVersion</key>
+		<string>$(FLUTTER_BUILD_NUMBER)</string>
+		<key>LSRequiresIPhoneOS</key>
+		<true/>
+
+		<!-- ══════════════════════════════════════════════════════════
+		     SECURITY: App Transport Security — enforce HTTPS for all
+		     domains. Allow arbitrary loads ONLY for the local-dev
+		     server in debug schemes (configured via the Debug
+		     .xcconfig file), not in release.
+		     ══════════════════════════════════════════════════════════ -->
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSAllowsArbitraryLoads</key>
+			<false/>
+			<key>NSAllowsArbitraryLoadsInWebContent</key>
+			<false/>
+			<!-- Live API domains must be reachable; we still pin certs via TrustKit -->
+			<key>NSExceptionDomains</key>
+			<dict>
+				<key>api.ore.delivery</key>
+				<dict>
+					<key>NSExceptionAllowsInsecureHTTPLoads</key>
+					<false/>
+					<key>NSExceptionMinimumTLSVersion</key>
+					<string>TLSv1.2</string>
+					<key>NSRequiresCertificateTransparency</key>
+					<false/>
+				</dict>
+				<key>api-staging.ore.delivery</key>
+				<dict>
+					<key>NSExceptionAllowsInsecureHTTPLoads</key>
+					<false/>
+					<key>NSExceptionMinimumTLSVersion</key>
+					<string>TLSv1.2</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ══════════════════════════════════════════════════════════
+		     Privacy — usage descriptions. Apple will reject your app
+		     if any listed permission is requested without a clear,
+		     user-facing purpose string.
+		     ══════════════════════════════════════════════════════════ -->
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Ore needs your location to find nearby vendors, show accurate delivery estimates and pin your drop-off point on the map. Your location is only used while the app is open.</string>
+		<!-- NOTE: Customer app does NOT request NSLocationAlwaysUsageDescription
+		     or UIBackgroundModes: location. Only the rider app needs background
+		     location. Adding "always" here will trigger an App Store review
+		     rejection because we cannot justify it for customers. -->
+		<key>NSCameraUsageDescription</key>
+		<string>Ore uses the camera so you can upload photos when reporting an issue with an order.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>Ore accesses your photo library so you can attach a photo when reporting an issue.</string>
+		<key>NSPhotoLibraryAddUsageDescription</key>
+		<string>Ore saves photos to your library when you share a receipt.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Ore uses the microphone for in-app voice calls with your rider, the vendor and Ore Support.</string>
+		<key>NSUserNotificationsUsageDescription</key>
+		<string>Ore sends order updates, delivery alerts and the occasional promotional offer.</string>
+		<!-- Speech recognition reserved for a future voice-search feature;
+		     added now so future releases don't trip review. -->
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>Ore can transcribe your voice to search for food and vendors faster.</string>
+
+		<!-- ══════════════════════════════════════════════════════════
+             Twilio Voice — audio must stay alive during calls. VoIP
+             pushes use PushKit (NOT FCM) for ringing on iOS.
+             ══════════════════════════════════════════════════════════ -->
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>audio</string>
+			<string>voip</string>
+			<string>remote-notification</string>
+		</array>
+
+		<key>UIApplicationSceneManifest</key>
+		<dict>
+			<key>UIApplicationSupportsMultipleScenes</key>
+			<false/>
+			<key>UISceneConfigurations</key>
+			<dict>
+				<key>UIWindowSceneSessionRoleApplication</key>
+				<array>
+					<dict>
+						<key>UISceneClassName</key>
+						<string>UIWindowScene</string>
+						<key>UISceneConfigurationName</key>
+						<string>flutter</string>
+						<key>UISceneDelegateClassName</key>
+						<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+						<key>UISceneStoryboardFile</key>
+						<string>Main</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<true/>
+		<key>UILaunchStoryboardName</key>
+		<string>LaunchScreen</string>
+		<key>UIMainStoryboardFile</key>
+		<string>Main</string>
+
+		<!-- Screenshot privacy — on iOS there is no FLAG_SECURE equivalent;
+		     sensitive screens instead overlay a blurred widget when the app
+		     is backgrounded. We add the screenshot-detected notification
+		     handler in code. -->
+
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+		<key>UISupportedInterfaceOrientations~ipad</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationPortraitUpsideDown</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+		<key>UIStatusBarHidden</key>
+		<false/>
+	</dict>
+</plist>

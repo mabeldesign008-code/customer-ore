@@ -1,0 +1,14 @@
+{
+  "name": "@ore/seed",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@ore/config": "workspace:*",
+    "@ore/contracts": "workspace:*",
+    "pg": "^8.23.0",
+    "typeorm": "0.3.31",
+    "reflect-metadata": "^0.2.2"
+  }
+}

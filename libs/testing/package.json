@@ -1,0 +1,32 @@
+{
+  "name": "@ore/testing",
+  "version": "1.0.0",
+  "description": "Shared testing utilities for Ore Delivery backend services",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nestjs/common": "*",
+    "@nestjs/core": "*",
+    "@nestjs/testing": "*",
+    "@nestjs/typeorm": "*",
+    "typeorm": "*",
+    "better-sqlite3": "^11.7.0",
+    "rxjs": "*",
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "*",
+    "@types/supertest": "*",
+    "jest": "*",
+    "ts-jest": "*",
+    "typescript": "*"
+  },
+  "peerDependencies": {
+    "@ore/core": "workspace:*",
+    "@ore/contracts": "workspace:*"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ore_core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/ore_core/lib",
+  "tags": ["scope:mobile", "type:lib", "platform:flutter"],
+  "targets": {
+    "pub-get": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter pub get",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "flutter analyze .",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/lib/**/*", "{projectRoot}/test/**/*"],
+      "outputs": ["{projectRoot}/coverage"],
+      "options": {
+        "command": "flutter test",
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

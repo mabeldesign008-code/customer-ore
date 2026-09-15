@@ -1,0 +1,128 @@
+name: ore_rider
+description: "Ore Rider — delivery partner app for food, groceries, pharmacy, market, shop, laundry, parcels and errands."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  lucide_icons_flutter: ^3.1.14+2
+  flutter_svg: ^2.2.2
+  cached_network_image: ^3.4.1
+  shimmer: ^3.0.0
+  flutter_rating_bar: ^4.0.1
+
+  # State management
+  flutter_riverpod: ^3.3.2
+
+  # Navigation
+  go_router: ^14.6.2
+
+  # Network & storage
+  dio: ^5.7.0
+  dio_cache_interceptor: ^3.5.0
+  http_parser: ^4.1.2
+  shared_preferences: ^2.5.3
+  flutter_secure_storage: ^9.2.2
+  flutter_dotenv: ^5.1.0
+
+  # Google Maps & location
+  google_maps_flutter: ^2.18.0
+  latlong2: ^0.9.1
+  geolocator: ^10.1.0
+  geolocator_android: ^4.6.2
+  geolocator_apple: ^2.3.14
+  url_launcher: ^6.3.2
+  permission_handler: ^11.3.1
+
+  # Media
+  image_picker: ^1.1.2
+  cross_file: ^0.3.5+4
+
+  # Motion, animations, Lottie
+  flutter_animate: ^4.5.2
+  lottie: ^3.1.3
+  connectivity_plus: ^6.1.0
+
+  # Push notifications
+  firebase_core: ^4.13.0
+  firebase_messaging: ^16.5.0
+
+  # Charts
+  fl_chart: ^0.69.2
+
+  # Utilities
+  uuid: ^4.5.1
+  intl: ^0.20.2
+  share_plus: ^12.0.1
+
+  # Shared core
+  ore_core:
+    path: ../../packages/ore_core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - .env
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Inter-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Inter-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Inter-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Inter-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Inter-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Inter-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Inter-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Inter-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Inter-BlackItalic.ttf
+          weight: 900
+          style: italic

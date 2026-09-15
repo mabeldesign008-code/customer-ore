@@ -1,0 +1,23 @@
+{
+  "name": "@ore/payment-service",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/main.js",
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-fastify": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.3",
+    "@ore/bus": "workspace:*",
+    "@ore/config": "workspace:*",
+    "@ore/contracts": "workspace:*",
+    "@ore/core": "workspace:*",
+    "@ore/db": "workspace:*",
+    "@ore/jobs": "workspace:*",
+    "@ore/paystack": "workspace:*",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "typeorm": "0.3.31",
+    "fastify": "^5.11.3"
+  }
+}

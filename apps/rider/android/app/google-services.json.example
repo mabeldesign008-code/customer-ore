@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "0",
+    "project_id": "ore-rider-local",
+    "storage_bucket": "ore-rider-local.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:0:android:local",
+        "android_client_info": {
+          "package_name": "com.ore.rider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "replace-me"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

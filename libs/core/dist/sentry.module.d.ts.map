@@ -1,0 +1,1 @@
+{"version":3,"file":"sentry.module.d.ts","sourceRoot":"","sources":["../src/sentry.module.ts"],"names":[],"mappings":"AAAA,wCAAwC;AAExC,OAAO,EAAU,aAAa,EAAU,MAAM,gBAAgB,CAAC;AAc/D,MAAM,WAAW,mBAAmB;IAClC,GAAG,CAAC,EAAE,MAAM,CAAC;IACb,WAAW,CAAC,EAAE,MAAM,CAAC;IACrB,OAAO,CAAC,EAAE,OAAO,CAAC;CACnB;AAED,qBAEa,YAAY;IACvB,MAAM,CAAC,OAAO,CAAC,OAAO,CAAC,EAAE,mBAAmB,GAAG,aAAa;CA6C7D"}

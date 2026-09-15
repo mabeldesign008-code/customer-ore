@@ -1,0 +1,12 @@
+{
+  "name": "@ore/bus",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@ore/config": "workspace:*",
+    "@ore/contracts": "workspace:*",
+    "nats": "^2.29.3"
+  }
+}

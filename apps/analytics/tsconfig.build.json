@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": "../../",
+    "paths": {
+      "@ore/contracts": ["libs/contracts/dist/index.d.ts"],
+      "@ore/config": ["libs/config/dist/index.d.ts"],
+      "@ore/db": ["libs/db/dist/index.d.ts"],
+      "@ore/geo": ["libs/geo/dist/index.d.ts"],
+      "@ore/paystack": ["libs/paystack/dist/index.d.ts"],
+      "@ore/bus": ["libs/bus/dist/index.d.ts"],
+      "@ore/jobs": ["libs/jobs/dist/index.d.ts"],
+      "@ore/maps": ["libs/maps/dist/index.d.ts"],
+      "@ore/notify": ["libs/notify/dist/index.d.ts"],
+      "@ore/core": ["libs/core/dist/index.d.ts"],
+      "@ore/seed": ["libs/seed/dist/index.d.ts"],
+      "@ore/storage": ["libs/storage/dist/index.d.ts"]
+    }
+  },
+  "exclude": ["src/**/*.spec.ts"]
+}

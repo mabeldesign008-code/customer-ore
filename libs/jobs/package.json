@@ -1,0 +1,12 @@
+{
+  "name": "@ore/jobs",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@ore/config": "workspace:*",
+    "bullmq": "^6.0.9",
+    "ioredis": "^5.4.2"
+  }
+}
