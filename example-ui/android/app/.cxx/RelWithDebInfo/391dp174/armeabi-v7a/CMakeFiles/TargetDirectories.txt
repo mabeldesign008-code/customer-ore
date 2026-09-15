@@ -1,2 +1,0 @@
-/Volumes/DK SSD/Dhruv/Flutter Project/Orange/android/app/.cxx/RelWithDebInfo/391dp174/armeabi-v7a/CMakeFiles/edit_cache.dir
-/Volumes/DK SSD/Dhruv/Flutter Project/Orange/android/app/.cxx/RelWithDebInfo/391dp174/armeabi-v7a/CMakeFiles/rebuild_cache.dir

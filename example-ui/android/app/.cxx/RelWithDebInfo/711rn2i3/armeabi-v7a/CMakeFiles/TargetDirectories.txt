@@ -1,2 +1,0 @@
-/Users/dhruvkathiriya/Documents/Dhruv/FlutterProject/Orange/android/app/.cxx/RelWithDebInfo/711rn2i3/armeabi-v7a/CMakeFiles/edit_cache.dir
-/Users/dhruvkathiriya/Documents/Dhruv/FlutterProject/Orange/android/app/.cxx/RelWithDebInfo/711rn2i3/armeabi-v7a/CMakeFiles/rebuild_cache.dir
